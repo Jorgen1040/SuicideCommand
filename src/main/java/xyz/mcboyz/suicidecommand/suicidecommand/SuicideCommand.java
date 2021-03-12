@@ -27,10 +27,8 @@ public class SuicideCommand {
                 Commands.literal("suicide")
                 .executes(c -> {
                     ServerPlayerEntity player = c.getSource().asPlayer();
-                    // Multiple different suicide messages? Choose random message from list/array
-                    // "Player could no longer handle the pressure"
-                    // etc...
-                    ITextComponent message = new StringTextComponent(player.getDisplayName().getString() + " gave up on life");
+                    // TODO: Multiple different suicide messages. Choose random message from list/array
+                    ITextComponent message = new StringTextComponent(player.getDisplayName().getString() + " realized Arashi apps were closed");
                     player.setHealth(0);
                     c.getSource().getServer().getPlayerList().sendMessageToTeamOrAllPlayers(player, message);
                     return 1;
